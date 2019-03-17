@@ -17,7 +17,6 @@ import static java.util.concurrent.TimeUnit.NANOSECONDS;
 
 /**
  * @author amazingjadewu@163.com
- * @created 2019年03月11日20:51
  */
 public class CronScheduledThreadPoolExecutor
         extends ThreadPoolExecutor
@@ -43,8 +42,6 @@ public class CronScheduledThreadPoolExecutor
      * guarantee FIFO order among tied entries.
      */
     private static final AtomicLong sequencer = new AtomicLong();
-
-    private static final AtomicLong test = new AtomicLong();
 
 
     /**

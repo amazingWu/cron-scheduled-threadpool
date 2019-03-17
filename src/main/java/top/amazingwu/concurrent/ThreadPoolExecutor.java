@@ -13,7 +13,6 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author amazingjadewu@163.com
- * @created 2019年03月11日20:51
  */
 public class ThreadPoolExecutor extends AbstractExecutorService {
 
