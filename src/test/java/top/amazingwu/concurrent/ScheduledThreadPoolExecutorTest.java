@@ -1,6 +1,6 @@
 package top.amazingwu.concurrent;
 
-import java.util.concurrent.TimeUnit;
+import com.cronutils.model.CronType;
 
 /**
  * @author amazingjadewu@163.com
@@ -8,10 +8,12 @@ import java.util.concurrent.TimeUnit;
  */
 public class ScheduledThreadPoolExecutorTest {
     public static void main(String[] args) {
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1);
-        scheduledThreadPoolExecutor.scheduleAtFixedRate(()->{
+        CronScheduledThreadPoolExecutor cronScheduledCronThreadPoolExecutor = new CronScheduledThreadPoolExecutor(4);
+        cronScheduledCronThreadPoolExecutor.scheduleWithCron(() -> {
             System.out.println("hello");
-            System.out.println(System.currentTimeMillis());
-        }, 1L, 1, TimeUnit.SECONDS);
+        }, "/1 * * * * ? *", CronType.QUARTZ);
+        cronScheduledCronThreadPoolExecutor.scheduleWithCron(() -> {
+            System.out.println("------");
+        }, "/2 * * * * ? *", CronType.QUARTZ);
     }
 }
